@@ -1,0 +1,279 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    text-align: center;
+    background: url(/img/background.png);
+}
+
+
+/* Homepage Section */
+
+.home-screen {
+    padding-top: 120px;
+    text-align: center;
+    height: 100vh;
+    background: linear-gradient(160deg, #5acea3, #5ff0fa, #e6f750);
+}
+
+.home-text h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+    font-weight: 480;
+}
+
+.home-text h2 {
+    margin-top: 10px;
+    font-weight: normal;
+    font-size: large;
+}
+
+.home-play {
+    margin-top: 50px;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background: rgb(70, 245, 70);
+    padding: 10px 30px;
+    font-size: large;
+    box-shadow: 2px 5px 10px 2px silver;
+}
+
+button:hover {
+    box-shadow: 1px 2px 5px 1px silver;
+    padding: 9px 29px;
+    cursor: pointer;
+}
+
+
+/* Gameplay Section */
+
+.hidden {
+    display: none;
+}
+
+.game-screen {
+    height: 100%;
+    width: 50%;
+    max-width: 670px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-container {
+    height: 180px;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: linear-gradient(160deg, #5acea3, #5ff0fa, #e6f750);
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 2px silver;
+}
+
+.count-text,
+.time-text {
+    margin-bottom: 5px;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.rating-icon,
+.refresh-icon {
+    width: 20px;
+}
+
+.rating-icon {
+    margin-top: 10px;
+}
+
+.refresh {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 50%;
+    background: silver;
+}
+
+.game-board {
+    height: 100%;
+    background: linear-gradient(160deg, #5acea3, #5ff0fa, #e6f750);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 2px silver;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 140px;
+    height: 100px;
+    margin: 5px;
+    display: flex;
+    transition: transform 1s;
+    position: relative;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.card-image,
+.card-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    background: rgba(4, 94, 121);
+}
+
+.card-image {
+    background: rgb(5, 180, 180);
+    transform: rotateY(180deg);
+}
+
+.card-revert {
+    background: rgb(5, 180, 180);
+}
+
+.flip {
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
+
+.stop-clicks {
+    pointer-events: none;
+}
+
+.matched {
+    background-color: rgb(160, 253, 137);
+}
+
+.remove-star {
+    visibility: hidden;
+}
+
+
+/* Victory Section*/
+
+.victory-screen {
+    background: white;
+    width: 90%;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}
+
+.victory-text {
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.victory-grades {
+    padding-top: 10px;
+    line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+.replay {
+    padding-top: 40px;
+}
+
+
+/* Media Querries */
+
+@media screen and (max-width: 1240px) {
+    .game-screen {
+        width: 90%;
+    }
+    .card {
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .game-screen {
+        width: 90%;
+        height: calc(100vw / 1.4);
+    }
+    .card {
+        width: 108px;
+        height: calc(100vw / 7.5);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .card {
+        width: 89px;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    .card {
+        width: 80.5px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .card {
+        width: 65px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .card {
+        width: 54.8px;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    .count-text,
+    .time-text {
+        font-size: medium;
+    }
+    .rating-icon,
+    .refresh-icon {
+        width: 18px;
+    }
+    .card {
+        width: 41.9px;
+    }
+}
+
+@media screen and (max-width: 252px) {
+    .game-screen {
+        width: 80%;
+    }
+    .game-board {
+        margin-top: -10px;
+    }
+    .count-text,
+    .time-text {
+        font-size: small;
+    }
+    .rating-icon,
+    .refresh-icon {
+        width: 15px;
+    }
+    header {
+        font-size: 12px;
+    }
+    .card {
+        width: 30px;
+    }
+}
